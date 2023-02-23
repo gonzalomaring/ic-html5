@@ -17,7 +17,7 @@ pipeline {
         stage('Deploy')
         {
             steps{
-                sh 'surge ./_build/ gonzalomarin.surge.sh --token $TOKEN'
+                sh 'export http_proxy=http://172.29.0.1:8888 && surge ./_build/ gonzalomarin.surge.sh --token $TOKEN'
             }
         }
         
