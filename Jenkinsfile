@@ -17,7 +17,7 @@ pipeline {
         stage('Install surge')
         {
             steps {
-                sh 'npm install -g surge'
+                sh 'export http_proxy=http://172.29.0.1:8888 && npm install -g surge'
             }
         }
         stage('Deploy')
